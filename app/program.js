@@ -1,4 +1,4 @@
-var OSinfo = require('./OSinfo');
+var OSinfo = require('../modules/OSinfo');
 
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function () {
@@ -6,14 +6,14 @@ process.stdin.on('readable', function () {
     if (input !== null) {
         var instruction = input.trim();
         switch (instruction) {
-            case '/exit':
+            case 'exit':
                 process.stdout.write('Quitting app!\n');
                 process.exit();
                 break;
-            case '/sayhello':
+            case 'sayhello':
                 process.stdout.write('hello!\n');
                 break;
-            case '/getOSinfo':
+            case 'getOSinfo':
                 OSinfo.print();
                 break;
             default:
